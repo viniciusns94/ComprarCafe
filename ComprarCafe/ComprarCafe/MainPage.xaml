@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ComprarCafe.MainPage"
+             BackgroundColor="White">
+    <StackLayout Margin="16">
+        <Label Text="Compra de Café" HorizontalOptions="Center" VerticalOptions="Center" FontSize="40"/>
+        <Image Source="https://w0.pngwave.com/png/639/972/coffee-cup-cafe-cappuccino-coffee-png-clip-art.png"/> <!-- Imagem da web caso não funcione pegar outra qualquer -->
+        <Label Text="Valor Unitário" HorizontalOptions="CenterAndExpand"/>
+        <Label Text="R$ 5,00" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large"/>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="-" HorizontalOptions="FillAndExpand"/>
+            <Button Text="+" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <Label x:Name="qtd" Text="Quantidade: 0" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+        <Label x:Name="Total" Text="Total R$: 0,00" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+    </StackLayout>
+</ContentPage>
