@@ -8,14 +8,38 @@ using Xamarin.Forms;
 
 namespace ComprarCafe
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+        public int Quantidade { get; set; }
+        public Double Total { get; set; }
+        public Double ValoUnitario { get; set; }
+
         public MainPage()
         {
             InitializeComponent();
+            this.Quantidade = 0;
+            this.ValoUnitario = 5; 
+            this.Total = 0; 
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            var pressed = button.Text;
+            if(pressed == "-")
+            {
+                if(this.Quantidade > 0)
+                {
+                    this.Quantidade--;
+                }
+            } else
+            {
+                this.Quantidade++;
+            }
+            this.Total = this.Quantidade * this.ValoUnitario;
+            label_mainpage_total.Text = "Total: R$ " + Total.ToString();
+            label_mainpage_qtd.Text = "Quantidade: " + Quantidade.ToString();
         }
     }
 }
